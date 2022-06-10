@@ -17,7 +17,17 @@ fetch(file)
     console.log(data.timezone);
     if (main == "Clear") {
       sunny(temp, data.timezone);
-    } else if (main == "Clouds" || main == "Fog" || main == "Mist" || main == "Smoke" || main == "Haze" || main == "Dust" || main == "Sand" || main == "Ash" || main == "Squall") {
+    } else if (
+      main == "Clouds" ||
+      main == "Fog" ||
+      main == "Mist" ||
+      main == "Smoke" ||
+      main == "Haze" ||
+      main == "Dust" ||
+      main == "Sand" ||
+      main == "Ash" ||
+      main == "Squall"
+    ) {
       sunny(temp, data.timezone);
     } else if (main == "Rain" || main == "Drizzle" || main == "Thunderstorm") {
       rain(temp, data.timezone);
@@ -39,17 +49,20 @@ import { FontLoader } from "./FontLoader.js";
 import { TextGeometry } from "./TextGeometry.js";
 const loader = new FontLoader();
 let frame = 0;
-let frame3= 0;
+let frame3 = 0;
 let Mesh;
 let light;
 
 function load(temp, timezone) {
   loader.load("resources/Lato Black_Regular.json", function (font) {
-    const geometry = new TextGeometry(temp.toString() + "C°                      " + timezone,  {
-      font: font,
-      size: 0.05,
-      height: 0.01,
-    });
+    const geometry = new TextGeometry(
+      temp.toString() + "C°                      " + timezone,
+      {
+        font: font,
+        size: 0.05,
+        height: 0.01,
+      }
+    );
     const textMesh = new THREE.Mesh(geometry, [
       new THREE.MeshBasicMaterial({ color: 0xffffff }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
@@ -58,7 +71,7 @@ function load(temp, timezone) {
     textMesh.position.y = -0.46;
     textMesh.position.z = 0.79;
     textMesh.position.x = -0.5;
-    textMesh.rotation.y = 0
+    textMesh.rotation.y = 0;
     //textMesh.rotation.x = -0.3;
     scene.add(textMesh);
 
@@ -68,11 +81,14 @@ function load(temp, timezone) {
   });
 
   loader.load("resources/Lato Black_Regular.json", function (font) {
-    const geometry = new TextGeometry(temp.toString() + "C°                      " + timezone,  {
-      font: font,
-      size: 0.05,
-      height: 0.01,
-    }); 
+    const geometry = new TextGeometry(
+      temp.toString() + "C°                      " + timezone,
+      {
+        font: font,
+        size: 0.05,
+        height: 0.01,
+      }
+    );
     const textMesh = new THREE.Mesh(geometry, [
       new THREE.MeshBasicMaterial({ color: 0xffffff }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
@@ -90,11 +106,14 @@ function load(temp, timezone) {
     // textMesh.position.set(x-1.5, 0.1, z-3.4);
   });
   loader.load("resources/Lato Black_Regular.json", function (font) {
-    const geometry = new TextGeometry(temp.toString() + "C°                      " + timezone,  {
-      font: font,
-      size: 0.05,
-      height: 0.01,
-    });
+    const geometry = new TextGeometry(
+      temp.toString() + "C°                      " + timezone,
+      {
+        font: font,
+        size: 0.05,
+        height: 0.01,
+      }
+    );
     const textMesh = new THREE.Mesh(geometry, [
       new THREE.MeshBasicMaterial({ color: 0xffffff }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
@@ -103,7 +122,7 @@ function load(temp, timezone) {
     textMesh.position.y = -0.46;
     textMesh.position.z = -0.78;
     textMesh.position.x = 0.5;
-    textMesh.rotation.y = 3.15
+    textMesh.rotation.y = 3.15;
     //textMesh.rotation.x = -0.3;
     scene.add(textMesh);
 
@@ -112,11 +131,14 @@ function load(temp, timezone) {
     // textMesh.position.set(x-1.5, 0.1, z-3.4);
   });
   loader.load("resources/Lato Black_Regular.json", function (font) {
-    const geometry = new TextGeometry(temp.toString() + "C°                      " + timezone,  {
-      font: font,
-      size: 0.05,
-      height: 0.01,
-    });
+    const geometry = new TextGeometry(
+      temp.toString() + "C°                      " + timezone,
+      {
+        font: font,
+        size: 0.05,
+        height: 0.01,
+      }
+    );
     const textMesh = new THREE.Mesh(geometry, [
       new THREE.MeshBasicMaterial({ color: 0xffffff }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
@@ -125,7 +147,7 @@ function load(temp, timezone) {
     textMesh.position.y = -0.46;
     textMesh.position.z = -0.5;
     textMesh.position.x = -0.79;
-    textMesh.rotation.y = -1.573
+    textMesh.rotation.y = -1.573;
     //textMesh.rotation.x = -0.3;
     scene.add(textMesh);
 
@@ -134,7 +156,6 @@ function load(temp, timezone) {
     // textMesh.position.set(x-1.5, 0.1, z-3.4);
   });
 }
-
 
 function rain(temp, timezone) {
   let rain = [];

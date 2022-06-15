@@ -20,7 +20,7 @@ fetch(`${queryUrl}${window.location.search}&${apiOptions}${apiKey}`)
     console.log(temp);
     console.log(data.timezone);
     if (main == "Clear") {
-      cloud(temp, data.timezone);
+      sunny(temp, data.timezone);
     } else if (
       main == "Fog" ||
       main == "Mist" ||

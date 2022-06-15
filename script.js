@@ -1,13 +1,17 @@
 // https://api.openweathermap.org/data/2.5/onecall?lat=47.3686498&lon=8.5391825&units=metric&exclude=minutely,alerts&appid=80e12c050ce340a2726151ba3bc13d55
 
-let queryUrl = "https://api.openweathermap.org/data/2.5/onecall?";
-let lat = "lat=47.3686498&";
-let lon = "lon=-96.1103&";
+let queryUrl = `https://api.openweathermap.org/data/2.5/onecall`;
+const params = new URLSearchParams();
+let lat = params.lat
+let lon = params.lon
+// let lati = "lat=" + lat;
+// console.log(lat);
+// let long = "lon=" + lon;
 let apiOptions = "units=metric&exclude=minutely,alerts&";
 let apiKey = "appid=80e12c050ce340a2726151ba3bc13d55";
-let file = queryUrl + lat + lon + apiOptions + apiKey;
+// let queryUrl = queryUrl + `${lat}` + `${lon}` + apiOptions + apiKey;
 
-fetch(file)
+fetch(`${queryUrl}${window.location.search}&${apiOptions}${apiKey}`)
   .then((response) => response.json())
   .then((data) => {
     let main = data.current.weather[0].main;

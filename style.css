@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-body {
+.home {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,6 +15,17 @@ body {
   background-image: url("./resources/background.jpg");
   background-size: cover;
   background-attachment: fixed;
+}
+
+.site {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+	align-content: center;
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+  background-color: gray;
 }
 
 .submit {

@@ -29,20 +29,23 @@
 }
 
 h1 {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
   color: white;
   font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+  font-size: 100px;
+  padding: 15px;
 }
 
 button {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-	align-items: center;
-	align-content: center;
   padding: 15px 30px;
   background: #e7e7e7;
   border: none;
-  border-radius: 1px;
   font-family: "Nunito", sans-serif;
   font-weight: bold;
   font-size: 20px;
@@ -53,6 +56,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .input {

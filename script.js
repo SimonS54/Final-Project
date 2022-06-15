@@ -2,8 +2,8 @@
 
 let queryUrl = `https://api.openweathermap.org/data/2.5/onecall`;
 const params = new URLSearchParams();
-let lat = params.lat
-let lon = params.lon
+let lat = params.lat;
+let lon = params.lon;
 // let lati = "lat=" + lat;
 // console.log(lat);
 // let long = "lon=" + lon;
@@ -20,9 +20,8 @@ fetch(`${queryUrl}${window.location.search}&${apiOptions}${apiKey}`)
     console.log(temp);
     console.log(data.timezone);
     if (main == "Clear") {
-      sunny(temp, data.timezone);
+      cloud(temp, data.timezone);
     } else if (
-      main == "Clouds" ||
       main == "Fog" ||
       main == "Mist" ||
       main == "Smoke" ||
@@ -37,6 +36,8 @@ fetch(`${queryUrl}${window.location.search}&${apiOptions}${apiKey}`)
       rain(temp, data.timezone);
     } else if (main == "Snow") {
       snow(temp, data.timezone);
+    } else if (main == "Clouds") {
+      cloud(temp, data.timezone);
     }
   });
 
@@ -245,8 +246,8 @@ function rain(temp, timezone) {
       if (rainDrop.position.y <= 1) return;
     });
   }
-
-  init(temp, timezone);
+  load(temp, timezone);
+  init();
   initRain();
   setLight();
   loadGLTF();
@@ -427,6 +428,7 @@ function sunny(temp, timezone) {
     }
     anima();
   }
+
   load(temp, timezone);
   init();
   initsphere();
@@ -434,4 +436,66 @@ function sunny(temp, timezone) {
   loadGLTF();
   animate();
   ambientlight();
+}
+
+function cloud(temp, timezone) {
+  let rain = [];
+
+  function init() {
+    scene.background = new THREE.Color("grey");
+
+    camera.lookAt(new THREE.Vector3(-2, 10, 4));
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+  }
+
+  function ambientlight() {
+    const light = new THREE.AmbientLight(0x404040);
+    scene.add(light);
+  }
+
+  function setLight() {
+    const color = 0xffffff;
+    const intensity = 1.5;
+    const light = new THREE.DirectionalLight(color, intensity);
+    light.position.set(-0.5, 1, -0.5);
+    light.target.position.set(0, 0, 0);
+    light.target.Mesh;
+    scene.add(light);
+    scene.add(light.target);
+  }
+
+  function loadGLTF() {
+    let Loader = new THREE.GLTFLoader();
+
+    Loader.load("./model/cloud.gltf", (gltf) => {
+      Mesh = gltf.scene;
+      Mesh.scale.set(0.2, 0.2, 0.2);
+      scene.add(Mesh);
+      camera.target = Mesh;
+      Mesh.position.x = 0;
+      Mesh.position.y = -0.4;
+      Mesh.position.z = 0;
+    });
+  }
+
+  function animate() {
+    frame++;
+    frame3--;
+    requestAnimationFrame(animate);
+
+    let x = Math.sin((frame * Math.PI) / 500) * 3.8;
+    let z = Math.cos((frame * Math.PI) / 500) * 3.8;
+    camera.position.set(x, 2, z);
+
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    renderer.render(scene, camera);
+  }
+  load(temp, timezone);
+  ambientlight();
+  init();
+  setLight();
+  loadGLTF();
+  animate();
 }

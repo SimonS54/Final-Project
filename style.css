@@ -8,8 +8,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-	align-items: center;
-	align-content: center;
+  align-items: center;
+  align-content: center;
   font-family: "Nunito", sans-serif;
   height: 100vh;
   background-image: url("./resources/background.jpg");
@@ -21,8 +21,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-	align-items: center;
-	align-content: center;
+  align-items: center;
+  align-content: center;
   font-family: "Nunito", sans-serif;
   height: 100vh;
   background-color: gray;
@@ -30,11 +30,11 @@
 
 h1 {
   display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   color: white;
   font-family: "PT Sans", Calibri, Tahoma, sans-serif;
   font-size: 100px;
@@ -63,8 +63,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-	align-items: center;
-	align-content: center;
+  align-items: center;
+  align-content: center;
   margin: 50px auto;
 }
 
@@ -72,8 +72,8 @@ button[type="submit"] {
   display: flex;
   flex-direction: column;
   justify-content: center;
-	align-items: center;
-	align-content: center;
+  align-items: center;
+  align-content: center;
   padding: 15px 30px;
   background: #e7e7e7;
   border: none;
@@ -87,8 +87,8 @@ button[type="submit"] {
 .input input[type="text"] {
   display: flex;
   justify-content: center;
-	align-items: center;
-	align-content: center;  
+  align-items: center;
+  align-content: center;
   flex-direction: column;
   margin-bottom: 15px;
   width: 400px;

@@ -1,7 +1,7 @@
 // https://api.openweathermap.org/data/2.5/onecall?lat=47.3686498&lon=8.5391825&units=metric&exclude=minutely,alerts&appid=80e12c050ce340a2726151ba3bc13d55
 
 let queryUrl = "https://api.openweathermap.org/data/2.5/onecall?";
-let lat = "lat=36.5825&";
+let lat = "lat=47.3686498&";
 let lon = "lon=-96.1103&";
 let apiOptions = "units=metric&exclude=minutely,alerts&";
 let apiKey = "appid=80e12c050ce340a2726151ba3bc13d55";
@@ -242,7 +242,7 @@ function rain(temp, timezone) {
     });
   }
 
-  init();
+  init(temp, timezone);
   initRain();
   setLight();
   loadGLTF();

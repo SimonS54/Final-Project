@@ -4,23 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OpenWeatherMap Api</title>
+  <title>Final Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="input">
-      <input type="text" placeholder="Enter the city" class="input_text">
+      <form action="index.html">  
+      <input name="lat" type="text" placeholder="Enter the latitude" class="input_text">
+      <input name="lon" type="text" placeholder="Enter the longitude" class="input_text">
       <button type="submit" value="Submit" class="submit">Submit</button>
+      </form>
     </div>
   </div>
-
-  <div class="container">
-    
-      <h1 class="name" id="name"></h1>
-      <p class="temp"></p>
-      <p class="main"></p>
-
-  </div>
-<script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

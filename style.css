@@ -28,6 +28,27 @@
   background-color: gray;
 }
 
+h1 {
+  color: white;
+  font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+}
+
+button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+	align-content: center;
+  padding: 15px 30px;
+  background: #e7e7e7;
+  border: none;
+  border-radius: 1px;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 25px;
+}
+
 .submit {
   display: flex;
   justify-content: center;
